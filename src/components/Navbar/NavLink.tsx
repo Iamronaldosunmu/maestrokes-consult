@@ -9,7 +9,7 @@ const NavLink: React.FC<NavLinkProps> = ({ text, link }) => {
   const navigate = useNavigate();
 
   return (
-    <p onClick={() => navigate(link)} className="font-medium text-[21px] hover:cursor-pointer">
+    <p onClick={() => navigate(link)} className="font-medium text-[18px] xl:text-[21px] hover:cursor-pointer">
       {text}
     </p>
   );
