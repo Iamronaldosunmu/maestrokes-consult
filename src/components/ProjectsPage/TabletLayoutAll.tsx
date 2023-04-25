@@ -1,7 +1,7 @@
 import Project from "../Project";
 
 interface TableLayoutAllProps {
-  projectData: { projectName: string; image: string }[];
+  projectData: { projectName: string; image: string; link: string; }[];
 }
 
 const TabletLayoutAll: React.FC<TableLayoutAllProps> = ({ projectData }) => {
@@ -13,6 +13,7 @@ const TabletLayoutAll: React.FC<TableLayoutAllProps> = ({ projectData }) => {
           height={350}
           projectName={project.projectName}
           image={project.image}
+          link={project.link}
         />
       ))}
     </div>
