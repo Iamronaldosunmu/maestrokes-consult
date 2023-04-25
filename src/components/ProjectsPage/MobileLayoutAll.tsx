@@ -1,7 +1,7 @@
 import Project from "../Project";
 
 interface MobileLayoutAllProps {
-  projectData: { projectName: string; image: string }[];
+  projectData: { projectName: string; image: string, link: string }[];
 }
 
 const MobileLayoutAll: React.FC<MobileLayoutAllProps> = ({ projectData }) => {
@@ -13,6 +13,7 @@ const MobileLayoutAll: React.FC<MobileLayoutAllProps> = ({ projectData }) => {
           height={250}
           projectName={project.projectName}
           image={project.image}
+          link={project.link}
         />
       ))}
     </div>
