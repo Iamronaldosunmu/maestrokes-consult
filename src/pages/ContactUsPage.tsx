@@ -50,9 +50,9 @@ const ContactUsPage = () => {
           <TextAnimation text="+234-(0)-8130214937" lineHeight={27} delay={1.5}/>
 
         </article>
-        <p className="px-[20px] text-[25px] lg:text-[35px] font-semibold mt-[60px]">
+        <motion.p initial={{opacity: 0, y: 5}} animate={{opacity: 1, y: 0, transition: {delay: 1.2}}} className="px-[20px] text-[25px] lg:text-[35px] font-semibold mt-[60px]">
           Let us know how we can help you.
-        </p>
+        </motion.p>
 
         <form className="px-[20px] mt-[70px] flex flex-col gap-[50px] lg:gap-[68px]">
           <div className="w-full flex flex-col lg:flex-row gap-[50px] lg:gap-[100px]">
