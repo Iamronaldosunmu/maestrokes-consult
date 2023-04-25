@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface ImageCarouselProps {
   images: string[];
@@ -47,7 +48,7 @@ const ImageCarousel : React.FC<ImageCarouselProps> = ({images}) => {
         >
           {images.map((image) => (
             <div className="min-w-full flex justify-center">
-              <img
+              <LazyLoadImage effect="blur"
                 className="h-[280px] md:h-[400px] md:max-w-[calc(100vw-160px)] object-cover lg:h-[520px] rounded-[10px] cursor-pointer"
                 src={image}
               />
@@ -69,7 +70,7 @@ const ImageCarousel : React.FC<ImageCarouselProps> = ({images}) => {
           src="/ProjectPage/blackRightArrowMobile.svg"
         />
       </div>
-      <div className="w-full flex mt-[30px] md:mt-[40px] lg:mt-[65px] gap-[4px] md:gap-[15px] lg:gap-[21px] justify-center ">
+      <div className="w-full flex mt-[30px] md:mt-[40px] lg:mt-[65px] gap-[4px] md:gap-[15px] lg:gap-[21px] justify-center overflow-scroll no-scrollbar">
         {images.map((image, index) => (
           <div className="flex justify-center">
             <div
@@ -78,12 +79,9 @@ const ImageCarousel : React.FC<ImageCarouselProps> = ({images}) => {
                 backgroundColor:
                   index == currentImagePosition ? "black" : "white",
               }}
-              className="p-[3.5px] md:p-[5px] transition duration-200 rounded-[15px]"
+              className="p-[3.5px] md:p-[5px] min-w-[53.5px] min-h-[53.5px] md:min-w-max md:h-[78.5px] lg:h-[96.5px] transition duration-200 rounded-[15px]"
             >
-              <img
-                className="h-[50px] w-[50px] md:w-max md:h-[75px] lg:h-[93px] rounded-[10px] cursor-pointer"
-                src={image}
-              />
+              <LazyLoadImage  width={"100%"} height={"100%"} effect="blur" wrapperClassName="lazyLoadImageContainer rounded-[10px] overflow-hidden cursor-pointer" src={image} />
             </div>
           </div>
         ))}
