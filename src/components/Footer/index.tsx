@@ -1,6 +1,11 @@
+import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+
 const Footer = () => {
+  const { pathname } = useLocation();
   return (
-    <div className="bg-[#1C1C1C]">
+    <>
+    {pathname !== "/" && <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: 1}}} className="bg-[#1C1C1C]">
 
     <footer className="px-[20px] max-w-[1440px] mx-auto  pt-[50px] pb-[80px] bg-[#1C1C1C] flex flex-col lg:flex-row gap-[35px] lg:gap-0 justify-between lg:items-end">
       <p className="text-[22px] lg:text-[27px] xl:text-[32px] text-white">
@@ -20,7 +25,8 @@ const Footer = () => {
         <p>Youtube </p>
       </div>
     </footer>
-    </div>
+    </motion.div>}
+    </>
   );
 };
 
