@@ -13,6 +13,7 @@ import ProjectPage from "./pages/ProjectPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AnimatePresence } from "framer-motion";
+import Loader from "./pages/Loader";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,11 +34,12 @@ function App() {
       <NavBar />
       <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
-          <Route path="/" Component={HomePage} />
+          <Route path="/home" Component={HomePage} />
           <Route path="/contact-us" Component={ContactUsPage} />
           <Route path="/our-work" Component={ProjectsPage} />
           <Route path="/our-work/:projectId" Component={ProjectPage} />
           <Route path="/about-us" Component={AboutUsPage} />
+          <Route path="/" Component={Loader} />
         </Routes>
       </AnimatePresence>
       <Footer />
