@@ -22,3 +22,11 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.grayImage {
+  height: 150px;
+  max-width: 500px;
+  object-fit: cover;
+  transition: filter 0.3s;
+}
+

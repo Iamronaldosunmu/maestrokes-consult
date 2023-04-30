@@ -14,6 +14,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { AnimatePresence } from "framer-motion";
 import Loader from "./pages/Loader";
+import ClientsPage from "./pages/Clients";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,6 +36,7 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/home" Component={HomePage} />
+          <Route path="/clients" Component={ClientsPage} />
           <Route path="/contact-us" Component={ContactUsPage} />
           <Route path="/our-work" Component={ProjectsPage} />
           <Route path="/our-work/:projectId" Component={ProjectPage} />
