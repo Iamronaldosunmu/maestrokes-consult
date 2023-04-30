@@ -17,7 +17,7 @@ const ClientsPage = () => {
     <main>
       <section className="max-w-[1000px] mx-auto ">
         <header className="px-[20px] gap-[] mt-[110px] lg:mt-[137px] text-[40px] md:text-[64px] lg:text-[84px] lg:leading-[90px] lg:mb-[20px] font-bold lg:font-semibold flex gap-x-[16px] lg:gap-x-[18px] justify-center">
-          {"OUR CLIENTS".split(" ").map((word, index) => {
+          {"Our Clients".split(" ").map((word, index) => {
             return (
               <div key={index} className="overflow-hidden flex ">
                 {word.split("").map((letter: string, index: number) => {
