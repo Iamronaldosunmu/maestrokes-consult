@@ -51,7 +51,7 @@ const ClientsPage = () => {
                 animate={{
                   scale: 1,
                   opacity: 2,
-                    transition: { delay: 1 + 0.15 * index, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96]},
+                    transition: { delay: 1 + 0.15 * index, duration: 0.9, ease: [0.43, 0.13, 0.23, 0.96]},
                 }}
                 className="w-full flex items-center justify-center"
               >

@@ -111,7 +111,7 @@ const AboutUsPage = () => {
         />
       </figure>
       <header className="max-w-[1440px] mx-auto px-[20px] mt-[80px] md:mt-[110px] flex justify-between">
-        <h1 data-aos="fade-in" data-aos-duration="2000"  className="text-center lg:text-left text-[32px] md:text-[50px] lg:max-w-[600px] xl:max-w-none font-semibold max-w-[823px]">
+        <h1 data-aos="fade-in" data-aos-duration="2000"  className="text-center lg:text-left text-[32px] md:text-[50px] lg:max-w-[600px]  font-semibold xl:max-w-[823px]">
           Meet our team of world-class{" "}
           <span className="font-bold italic">architects</span> and{" "}
           <span className="font-bold italic">creative designers</span>
