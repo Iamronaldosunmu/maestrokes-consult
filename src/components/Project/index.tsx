@@ -30,7 +30,7 @@ const Project: React.FC<ProjectProps> = ({
           scale: projectHovered ? 1.015 : 1,
           transition: { duration: 0.4 },
         }}
-        className={`w-full rounded-[10px] overflow-hidden relative`}
+        className={`w-full rounded-[10px] overflow-hidden relative bg-gray-400`}
       >
         <motion.div
           initial={{ opacity: 0 }}
