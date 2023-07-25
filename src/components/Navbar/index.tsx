@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
+import Logo from "../../assets/logo.jpg";
 
 const NavBar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -11,7 +12,7 @@ const NavBar = () => {
   const [inPageTransition, setInPageTransition] = useState(false);
 
   const changePage = (route: string) => {
-    setTimeout(() => navigate(route), 2000)
+    setTimeout(() => navigate(route), 2000);
     setInPageTransition(true);
     setTimeout(() => {
       setMobileNavOpen(false);
@@ -65,11 +66,16 @@ const NavBar = () => {
           <motion.nav
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.4 } }}
+            style={{background: "linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.0))", backdropFilter: "blur(3px)", paddingBottom: pathname == "/home" ? 10 : 0}}
             className="text-[#252525] text-opacity-[0.92] max-w-[1440px] px-[20px]  mx-auto pt-[20px] lg:pt-[10px] flex items-center justify-between"
           >
-            <p onClick={() => navigate("/home")} className=" text-[18px] xl:text-[28px] z-20 cursor-pointer">
-              <span className="font-bold">MAESTROKES</span> CONSULT
-            </p>
+            <div
+              onClick={() => navigate("/home")}
+              className=" increase-font-on-mobile text-[15.4px]  md:text-[18px] xl:text-[28px] z-20 cursor-pointer flex gap-[8px] sm:gap-[16px] items-center"
+            >
+              <img className="w-[30px] md:w-[50px]" src={Logo} />
+              <div className="font-bold">MAESTROKES</div> CONSULT
+            </div>
             <div className="gap-[40px] hidden lg:flex">
               <NavLink
                 setInPageTransition={setInPageTransition}
