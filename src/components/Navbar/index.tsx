@@ -11,7 +11,7 @@ const NavBar = () => {
   const [inPageTransition, setInPageTransition] = useState(false);
 
   const changePage = (route: string) => {
-    setTimeout(() => navigate(route), 2300)
+    setTimeout(() => navigate(route), 2000)
     setInPageTransition(true);
     setTimeout(() => {
       setMobileNavOpen(false);
@@ -67,7 +67,7 @@ const NavBar = () => {
             animate={{ opacity: 1, transition: { duration: 0.4 } }}
             className="text-[#252525] text-opacity-[0.92] max-w-[1440px] px-[20px]  mx-auto pt-[20px] lg:pt-[10px] flex items-center justify-between"
           >
-            <p className=" text-[18px] xl:text-[28px] z-20">
+            <p onClick={() => navigate("/home")} className=" text-[18px] xl:text-[28px] z-20 cursor-pointer">
               <span className="font-bold">MAESTROKES</span> CONSULT
             </p>
             <div className="gap-[40px] hidden lg:flex">

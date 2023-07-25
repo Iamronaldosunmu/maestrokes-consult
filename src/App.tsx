@@ -30,6 +30,20 @@ function App() {
     AOS.refresh();
   }, []);
 
+  useEffect(() => {
+    if (location.pathname == "/about-us") {
+      document.title = "About | Maestrokes Consult";
+    } else if (location.pathname == "/clients") {
+      document.title = "Clients | Maestrokes Consult";
+    } else if (location.pathname == "/our-work") {
+      document.title = "Our Work | Maestrokes Consult";
+    } else if (location.pathname == "/contact-us") {
+      document.title = "Contact Us | Maestrokes Consult";
+    } else {
+      document.title = "Design Consulting | Maestrokes Consult | Lagos";
+    }
+  }, [location.pathname]);
+
   return (
     <div className="w-full">
       <NavBar />

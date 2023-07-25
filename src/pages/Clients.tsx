@@ -14,7 +14,7 @@ const ClientsPage = () => {
     "/ClientsPage/buildersstopcenterlogo.png",
   ]);
   return (
-    <main>
+    <motion.main exit={{opacity: 0}} >
       <section className="max-w-[1000px] mx-auto ">
         <header className="px-[20px] gap-[] mt-[110px] lg:mt-[137px] text-[40px] md:text-[64px] lg:text-[84px] lg:leading-[90px] lg:mb-[20px] font-bold lg:font-semibold flex gap-x-[16px] lg:gap-x-[18px] justify-center">
           {"Our Clients".split(" ").map((word, index) => {
@@ -61,7 +61,7 @@ const ClientsPage = () => {
           })}
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

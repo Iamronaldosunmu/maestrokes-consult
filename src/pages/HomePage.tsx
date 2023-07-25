@@ -51,7 +51,7 @@ const HomePage = () => {
   }
 
   return (
-    <main>
+    <motion.main exit={{opacity: 0}}>
       <div className="w-full h-screen relative flex items-end lg:items-center">
         <AnimatePresence>
           {homeProjects.map((project, index) => {
@@ -93,7 +93,7 @@ const HomePage = () => {
         </div>
       </div>
 
-    </main>
+    </motion.main>
   );
 };
 export default HomePage;

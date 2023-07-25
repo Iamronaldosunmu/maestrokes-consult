@@ -10,7 +10,7 @@ const ContactUsPage = () => {
   const [subject, setSubject] = useState("");
 
   return (
-    <main>
+    <motion.main exit ={{ opacity: 0}}>
       <section className="max-w-[1440px] mx-auto">
         <header className="px-[20px] gap-[] mt-[110px] lg:mt-[137px] text-[40px] md:text-[64px] lg:text-[84px] lg:leading-[90px] lg:mb-[20px] font-bold lg:font-semibold flex gap-x-[16px] lg:gap-x-[18px]">
         {"Contact Us"
@@ -84,7 +84,7 @@ const ContactUsPage = () => {
         </form>
       </section>
         <img className="w-full min-h-[220px] max-h-[600px] object-cover" src="/ContactUsPage/contactUsImage.png" />
-    </main>
+    </motion.main>
   );
 };
 
