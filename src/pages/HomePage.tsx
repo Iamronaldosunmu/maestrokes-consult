@@ -10,31 +10,37 @@ const HomePage = () => {
       title: "CUSTOMARY COURT OF APPEAL, ABUJA",
       image: "/Homepage/courtofappeal.webp",
       type: "INSTITUTIONAL",
+      link: "/our-work/customary-court-of-appeal",
     },
     {
       title: "FCT HIGH COURT, ABUJA",
       image: "/Homepage/highcourt.webp",
       type: "INSTITUTIONAL",
+      link: "/our-work/fct-high-court",
     },
     {
       title: "FHC RESIDENCES",
       image: "/Homepage/fhcresidences.webp",
       type: "RESIDENTIAL",
+      link: "/our-work/fhc-residences",
     },
     {
       title: "HILLSTAR RESIDENCES",
       image: "/Homepage/hillstarresidences.webp",
       type: "RESIDENTIAL",
+      link: "/our-work/hillstar-residences",
     },
     {
       title: "JUACHI OBI",
       image: "/Homepage/juachiobi.webp",
       type: "RESIDENTIAL",
+      link: "/our-work/juachi-obi",
     },
     {
       title: "BRANDCO WAREHOUSE",
       image: "/Homepage/brandcowarehouse.webp",
       type: "COMMERCIAL",
+      link: "/our-work/brand-co-warehouse",
     },
   ]);
 
@@ -46,17 +52,17 @@ const HomePage = () => {
   const onLeftButtonClick = () => {
     if (currentProject > 0) {
       setCurrentProject(currentProject - 1);
-    }
-    else setCurrentProject(homeProjects.length - 1)
-  }
+    } else setCurrentProject(homeProjects.length - 1);
+  };
 
   return (
-    <motion.main exit={{opacity: 0}}>
+    <motion.main exit={{ opacity: 0 }}>
       <div className="w-full h-screen relative flex items-end lg:items-center">
         <AnimatePresence>
           {homeProjects.map((project, index) => {
             return (
               <HomeProject
+                link={project.link}
                 text={project.title}
                 image={project.image}
                 type={project.type}
@@ -92,7 +98,6 @@ const HomePage = () => {
           </motion.button>
         </div>
       </div>
-
     </motion.main>
   );
 };
