@@ -66,186 +66,193 @@ const NavBar = () => {
           <motion.nav
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.4 } }}
-            style={{background: "linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.0))", backdropFilter: "blur(3px)", paddingBottom: pathname == "/home" ? 10 : 0}}
-            className="text-[#252525] text-opacity-[0.92] max-w-[1440px] px-[20px]  mx-auto pt-[20px] lg:pt-[10px] flex items-center justify-between"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.0))",
+              backdropFilter: "blur(3px)",
+              paddingBottom: pathname == "/home" ? 10 : 0,
+            }}
+            className="text-[#252525] text-opacity-[0.92] px-[20px]   pt-[20px] lg:pt-[10px] "
           >
-            <div
-              onClick={() => navigate("/home")}
-              className=" increase-font-on-mobile text-[15.4px]  md:text-[18px] xl:text-[28px] z-20 cursor-pointer flex gap-[8px] sm:gap-[16px] items-center"
-            >
-              <img className="w-[30px] md:w-[50px]" src={Logo} />
-              <div className="font-bold">MAESTROKES</div> CONSULT
-            </div>
-            <div className="gap-[40px] hidden lg:flex">
-              <NavLink
-                setInPageTransition={setInPageTransition}
-                text="ABOUT US"
-                link="/about-us"
-              />
-              <NavLink
-                setInPageTransition={setInPageTransition}
-                text="OUR WORK"
-                link="/our-work"
-              />
-              <NavLink
-                setInPageTransition={setInPageTransition}
-                text="CLIENTS"
-                link="/clients"
-              />
-              <NavLink
-                setInPageTransition={setInPageTransition}
-                text="CONTACT US"
-                link="/contact-us"
-              />
-            </div>
-            <div className="relative block lg:hidden">
-              <motion.div
-                layout
-                initial={{ opacity: 0 }}
-                animate={
-                  mobileNavOpen
-                    ? {
-                        opacity: 1,
-                        width: "100vw",
-                        height: "100vh",
-                        x: 20,
-                        y: -20,
-                        borderRadius: 0,
-                      }
-                    : {
-                        opacity: firstTime ? 0 : 1,
-                        width: 40,
-                        height: 40,
-                        borderRadius: "50vh",
-                        x: [20, 0],
-                        y: [-20, 0],
-                        transition: {
-                          delay: firstTime ? 0 : 0.3,
-                          duration: firstTime ? 0 : 0.4,
-                        },
-                      }
-                }
-                className=" bg-white  top-0 right-0 absolute"
+            <div className="max-w-[1440px] mx-auto flex items-center justify-between">
+              <div
+                onClick={() => navigate("/home")}
+                className=" increase-font-on-mobile text-[15.4px]  md:text-[18px] xl:text-[28px] z-20 cursor-pointer flex gap-[8px] sm:gap-[16px] items-center"
               >
-                <div className="pl-[20px] font-bold text-[40px] w-full h-full flex flex-col justify-center gap-[15px]">
-                  <div className="overflow-hidden z-40">
-                    <motion.div
-                      onClick={() => changePage("/home")}
-                      initial={{ y: 45, opacity: 0 }}
-                      animate={
-                        mobileNavOpen
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                              transition: { duration: 0.4, delay: 0.6 },
-                            }
-                          : { y: 45, transition: { duration: 0.3 } }
-                      }
-                    >
-                      HOME
-                    </motion.div>
+                <img className="w-[30px] md:w-[50px]" src={Logo} />
+                <div className="font-bold">MAESTROKES</div> CONSULT
+              </div>
+              <div className="gap-[40px] hidden lg:flex">
+                <NavLink
+                  setInPageTransition={setInPageTransition}
+                  text="ABOUT US"
+                  link="/about-us"
+                />
+                <NavLink
+                  setInPageTransition={setInPageTransition}
+                  text="OUR WORK"
+                  link="/our-work"
+                />
+                <NavLink
+                  setInPageTransition={setInPageTransition}
+                  text="CLIENTS"
+                  link="/clients"
+                />
+                <NavLink
+                  setInPageTransition={setInPageTransition}
+                  text="CONTACT US"
+                  link="/contact-us"
+                />
+              </div>
+              <div className="relative block lg:hidden">
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={
+                    mobileNavOpen
+                      ? {
+                          opacity: 1,
+                          width: "100vw",
+                          height: "100vh",
+                          x: 20,
+                          y: -20,
+                          borderRadius: 0,
+                        }
+                      : {
+                          opacity: firstTime ? 0 : 1,
+                          width: 40,
+                          height: 40,
+                          borderRadius: "50vh",
+                          x: [20, 0],
+                          y: [-20, 0],
+                          transition: {
+                            delay: firstTime ? 0 : 0.3,
+                            duration: firstTime ? 0 : 0.4,
+                          },
+                        }
+                  }
+                  className=" bg-white  top-0 right-0 absolute"
+                >
+                  <div className="pl-[20px] font-bold text-[40px] w-full h-full flex flex-col justify-center gap-[15px]">
+                    <div className="overflow-hidden z-40">
+                      <motion.div
+                        onClick={() => changePage("/home")}
+                        initial={{ y: 45, opacity: 0 }}
+                        animate={
+                          mobileNavOpen
+                            ? {
+                                y: 0,
+                                opacity: 1,
+                                transition: { duration: 0.4, delay: 0.6 },
+                              }
+                            : { y: 45, transition: { duration: 0.3 } }
+                        }
+                      >
+                        HOME
+                      </motion.div>
+                    </div>
+                    <div className="overflow-hidden z-40">
+                      <motion.div
+                        onClick={() => changePage("/about-us")}
+                        initial={{ y: 45, opacity: 0 }}
+                        animate={
+                          mobileNavOpen
+                            ? {
+                                y: 0,
+                                opacity: 1,
+                                transition: { duration: 0.4, delay: 0.75 },
+                              }
+                            : { y: 45, transition: { duration: 0.3 } }
+                        }
+                      >
+                        ABOUT US
+                      </motion.div>
+                    </div>
+                    <div className="overflow-hidden z-40">
+                      <motion.div
+                        onClick={() => changePage("/our-work")}
+                        initial={{ y: 45, opacity: 0 }}
+                        animate={
+                          mobileNavOpen
+                            ? {
+                                y: 0,
+                                opacity: 1,
+                                transition: { duration: 0.4, delay: 0.9 },
+                              }
+                            : { y: 45, transition: { duration: 0.3 } }
+                        }
+                      >
+                        OUR WORK
+                      </motion.div>
+                    </div>
+                    <div className="overflow-hidden z-40">
+                      <motion.div
+                        initial={{ y: 45, opacity: 0 }}
+                        animate={
+                          mobileNavOpen
+                            ? {
+                                y: 0,
+                                opacity: 1,
+                                transition: { duration: 0.4, delay: 1.05 },
+                              }
+                            : { y: 45, transition: { duration: 0.3 } }
+                        }
+                      >
+                        CLIENTS
+                      </motion.div>
+                    </div>
+                    <div className="overflow-hidden z-40">
+                      <motion.div
+                        onClick={() => changePage("/contact-us")}
+                        initial={{ y: 45, opacity: 0 }}
+                        animate={
+                          mobileNavOpen
+                            ? {
+                                y: 0,
+                                opacity: 1,
+                                transition: { duration: 0.4, delay: 1.2 },
+                              }
+                            : { y: 45, transition: { duration: 0.3 } }
+                        }
+                      >
+                        CONTACT US
+                      </motion.div>
+                    </div>
                   </div>
-                  <div className="overflow-hidden z-40">
-                    <motion.div
-                      onClick={() => changePage("/about-us")}
-                      initial={{ y: 45, opacity: 0 }}
-                      animate={
-                        mobileNavOpen
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                              transition: { duration: 0.4, delay: 0.75 },
-                            }
-                          : { y: 45, transition: { duration: 0.3 } }
-                      }
-                    >
-                      ABOUT US
-                    </motion.div>
-                  </div>
-                  <div className="overflow-hidden z-40">
-                    <motion.div
-                      onClick={() => changePage("/our-work")}
-                      initial={{ y: 45, opacity: 0 }}
-                      animate={
-                        mobileNavOpen
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                              transition: { duration: 0.4, delay: 0.9 },
-                            }
-                          : { y: 45, transition: { duration: 0.3 } }
-                      }
-                    >
-                      OUR WORK
-                    </motion.div>
-                  </div>
-                  <div className="overflow-hidden z-40">
-                    <motion.div
-                      initial={{ y: 45, opacity: 0 }}
-                      animate={
-                        mobileNavOpen
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                              transition: { duration: 0.4, delay: 1.05 },
-                            }
-                          : { y: 45, transition: { duration: 0.3 } }
-                      }
-                    >
-                      CLIENTS
-                    </motion.div>
-                  </div>
-                  <div className="overflow-hidden z-40">
-                    <motion.div
-                      onClick={() => changePage("/contact-us")}
-                      initial={{ y: 45, opacity: 0 }}
-                      animate={
-                        mobileNavOpen
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                              transition: { duration: 0.4, delay: 1.2 },
-                            }
-                          : { y: 45, transition: { duration: 0.3 } }
-                      }
-                    >
-                      CONTACT US
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
 
-              <motion.div
-                onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                whileTap={{ scale: 0.85 }}
-                className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center gap-[4px] flex-col shadow-sm "
-              >
                 <motion.div
-                  animate={
-                    mobileNavOpen
-                      ? { width: 25, height: 1.5, rotateZ: 45, y: 5.2 }
-                      : { width: 13, height: 1.5, transition: { delay: 0.6 } }
-                  }
-                  className="w-[13px] h-[1px] bg-black z-10"
-                ></motion.div>
-                <motion.div
-                  animate={{
-                    width: mobileNavOpen ? 25 : 13,
-                    height: 1.5,
-                    opacity: mobileNavOpen ? 0 : 1,
-                    transition: { duration: 0.1 },
-                  }}
-                  className="w-[13px] h-[1px] bg-black z-10"
-                ></motion.div>
-                <motion.div
-                  animate={
-                    mobileNavOpen
-                      ? { width: 25, height: 1.5, rotateZ: -45, y: -5.2 }
-                      : { width: 13, height: 1.5, transition: { delay: 0.6 } }
-                  }
-                  className="w-[13px] h-[1px] bg-black z-10"
-                ></motion.div>
-              </motion.div>
+                  onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                  whileTap={{ scale: 0.85 }}
+                  className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center gap-[4px] flex-col shadow-sm "
+                >
+                  <motion.div
+                    animate={
+                      mobileNavOpen
+                        ? { width: 25, height: 1.5, rotateZ: 45, y: 5.2 }
+                        : { width: 13, height: 1.5, transition: { delay: 0.6 } }
+                    }
+                    className="w-[13px] h-[1px] bg-black z-10"
+                  ></motion.div>
+                  <motion.div
+                    animate={{
+                      width: mobileNavOpen ? 25 : 13,
+                      height: 1.5,
+                      opacity: mobileNavOpen ? 0 : 1,
+                      transition: { duration: 0.1 },
+                    }}
+                    className="w-[13px] h-[1px] bg-black z-10"
+                  ></motion.div>
+                  <motion.div
+                    animate={
+                      mobileNavOpen
+                        ? { width: 25, height: 1.5, rotateZ: -45, y: -5.2 }
+                        : { width: 13, height: 1.5, transition: { delay: 0.6 } }
+                    }
+                    className="w-[13px] h-[1px] bg-black z-10"
+                  ></motion.div>
+                </motion.div>
+              </div>
             </div>
           </motion.nav>
           {pathname !== "/home" && (
