@@ -123,7 +123,9 @@ const ProjectPage = () => {
           </h1>
           <div className=" mx-auto md:mx-0 md:text-[20px] flex flex-col items-center lg:items-start gap-[10px] mt-[20px]">
             {project?.paragraphs.map((paragraph, index) => (
-              <p className="max-w-[550px] " key={index}>{paragraph}</p>
+              <p className="max-w-[550px] " key={index}>
+                {paragraph}
+              </p>
             ))}
           </div>
         </div>
@@ -157,6 +159,7 @@ const ProjectPage = () => {
       </motion.div>
       <div className="mt-[80px] md:mt-[120px] lg:mt-[150px] w-full max-w-[1440px] mx-auto px-[20px]">
         <motion.p
+          onClick={() => navigate("/our-work")}
           onMouseEnter={() => setViewProjects(true)}
           onMouseLeave={() => setViewProjects(false)}
           className="text-[25px] md:text-[34px] lg:text-[40px] whitespace-nowrap font-bold flex items-center gap-[5px] md:gap-[55px] moreProjects cursor-pointer"
@@ -174,15 +177,19 @@ const ProjectPage = () => {
       </div>
       <div className="w-full ">
         <div className="no-scrollbar min-w-full overflow-x-scroll overflow-y-visible py-[20px] md:py-[60px] flex gap-x-[38px] max-w-[1440px] mx-auto px-[20px] lg:px-[calc(((100vw-1440px)/2)+20px)]">
-            {ProjectData.filter(currentProject => currentProject.buildingType == project?.buildingType).map((project) => <div className="min-w-[300px] md:min-w-[480px]">
-            <Project
-              height={window.innerWidth > 768 ? 360 : 200}
-              projectName={project.projectName}
+          {ProjectData.filter(
+            (currentProject) =>
+              currentProject.buildingType == project?.buildingType
+          ).map((project) => (
+            <div className="min-w-[300px] md:min-w-[480px]">
+              <Project
+                height={window.innerWidth > 768 ? 360 : 200}
+                projectName={project.projectName}
                 image={project.images[0]}
                 link={`/our-work/${project.id}`}
-            />
-          </div>)}
-          
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div className="max-w-[1440px] mx-auto px-[20px] mt-[50px]">
