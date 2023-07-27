@@ -40,7 +40,7 @@ export default [
   },
   {
     id: "fhc-residences",
-    projectName: "FHC RESIDENCES",
+    projectName: "FHC JUDGES RESIDENCES, IKOYI",
     buildingType: "RESIDENTIAL",
     client: "The Federal Govenrment Of Nigeria",
     location:
@@ -48,7 +48,7 @@ export default [
     year: "2021-2022",
     paragraphs: [
       "This is designed to accommodate the Judges of the Federal High Court of Nigeria. It is currently under construction on 5 sites at Ikoyi.",
-      "The sites of the FHC Residences contains 3 buildings.",
+      "The sites of the FHC JUDGES RESIDENCES, IKOYI contains 3 buildings.",
       "All five site houses the main building which is a duplex, a separate 1 storey building and a 1 storey boy’s quarter.",
       "The main building contains a living room, large kitchen and dining, 5 en-suite bedrooms linked to terraces, a private office space, private living room, gym, patio and a boy’s quarter.",
     ],
@@ -149,4 +149,23 @@ export default [
       "/ProjectPage/AdmiraltyTowers/admiraltytowers.jpg",
     ],
   },
+  {
+    id: "ogudu-foreshore", 
+    projectName: "OGUDU FORESHORE", 
+    buildingType: "RESIDENTIAL", 
+    client: "Brains And Hammers", 
+    location: "", 
+    year: "", 
+    videos: [
+      {
+        src: "https://res.cloudinary.com/ronaldosunmu/video/upload/v1690493082/file_ae9uax.mp4",
+        thumbnail: "/ProjectPage/OguduForeshore/oguduforeshore1thumbnail.webp"
+      },
+      {
+        src: "https://res.cloudinary.com/ronaldosunmu/video/upload/v1690493364/file2_-_Trim_ikkrum.mp4",
+        thumbnail: "/ProjectPage/OguduForeshore/oguduforeshore2thumbnail.webp"
+      }
+    ], 
+    paragraphs: []
+  }
 ];

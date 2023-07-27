@@ -19,7 +19,7 @@ const HomePage = () => {
       link: "/our-work/fct-high-court",
     },
     {
-      title: "FHC RESIDENCES",
+      title: "FHC JUDGES RESIDENCES, IKOYI",
       image: "/Homepage/fhcresidences.webp",
       type: "RESIDENTIAL",
       link: "/our-work/fhc-residences",
@@ -42,6 +42,9 @@ const HomePage = () => {
       type: "COMMERCIAL",
       link: "/our-work/brand-co-warehouse",
     },
+    {
+      
+    }
   ]);
 
   const onRightButtonClick = () => {

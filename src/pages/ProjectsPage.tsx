@@ -30,7 +30,7 @@ const ProjectsPage = () => {
     },
 
     {
-      projectName: "FHC RESIDENCES",
+      projectName: "FHC JUDGES RESIDENCES, IKOYI",
       image: "/Homepage/fhcresidences.webp",
       type: "RESIDENTIAL",
       link: "/our-work/fhc-residences",
@@ -117,8 +117,12 @@ const ProjectsPage = () => {
   }, [selectedFilter]);
 
   return (
-    <motion.main exit={{opacity: 0}}>
-      <motion.nav  initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: 0.3, duration: 0.4}}} className="fixed top-[71px] lg:top-[48px] xl:top-[63px] bg-white w-full flex border-b border-black z-20">
+    <motion.main exit={{ opacity: 0 }}>
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.4 } }}
+        className="fixed top-[71px] lg:top-[48px] xl:top-[63px] bg-white w-full flex border-b border-black z-20"
+      >
         <div className="w-full max-w-[1440px] mx-auto px-[20px] flex text-[18px] xl:text-[21px] gap-[41px] pt-[12px] lg:pt-[14px] xl:pt-[16px] pb-[8px] lg:pb-[10px] xl:pb-[12px] overflow-auto no-scrollbar lg:overflow-hidden">
           <FilterItem
             text={"ALL"}
@@ -147,7 +151,11 @@ const ProjectsPage = () => {
         animate={
           inFilterTransition
             ? { opacity: 0, y: 20, transition: { duration: 0.3 } }
-            : { opacity: isFirstTime ? 0 : 1, y: 0, transition: { duration: 0.3 } }
+            : {
+                opacity: isFirstTime ? 0 : 1,
+                y: 0,
+                transition: { duration: 0.3 },
+              }
         }
         className="mb-[90px]"
       >

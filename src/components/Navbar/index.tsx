@@ -93,11 +93,11 @@ const NavBar = () => {
                   text="OUR WORK"
                   link="/our-work"
                 />
-                <NavLink
+                {/* <NavLink
                   setInPageTransition={setInPageTransition}
                   text="CLIENTS"
                   link="/clients"
-                />
+                /> */}
                 <NavLink
                   setInPageTransition={setInPageTransition}
                   text="CONTACT US"
@@ -185,7 +185,7 @@ const NavBar = () => {
                         OUR WORK
                       </motion.div>
                     </div>
-                    <div className="overflow-hidden z-40">
+                    {/* <div className="overflow-hidden z-40">
                       <motion.div
                         initial={{ y: 45, opacity: 0 }}
                         animate={
@@ -200,7 +200,7 @@ const NavBar = () => {
                       >
                         CLIENTS
                       </motion.div>
-                    </div>
+                    </div> */}
                     <div className="overflow-hidden z-40">
                       <motion.div
                         onClick={() => changePage("/contact-us")}

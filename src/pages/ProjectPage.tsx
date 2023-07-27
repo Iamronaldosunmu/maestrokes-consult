@@ -1,10 +1,23 @@
 import { useEffect, useRef, useState } from "react";
-import ImageCarousel from "../components/ImageCarousel";
+import ImageCarousel from "../components/MediaCarousel";
 import Project from "../components/Project";
 import { motion, useInView } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
-import ProjectData from "../components/data/ProjectInformation";
+import data from "../components/data/ProjectInformation";
 import ScrollIntoView from "react-scroll-into-view";
+import VideoPlayer from "../components/VideoPlayer";
+
+interface Project {
+  id?: string; 
+  projectName: string;
+  buildingType: string;
+  client: string;
+  location: string;
+  year: string;
+  paragraphs: string[];
+  images?: string[];
+  videos?: { src: string;  thumbnail: string}[];
+}
 
 const ProjectPage = () => {
   const navigate = useNavigate();
@@ -13,8 +26,9 @@ const ProjectPage = () => {
   const [learnMoreButtonHovered, setLearnMoreButtonHovered] = useState(false);
   const projectDetails = useRef(null);
   const projectDetailsInView = useInView(projectDetails, { once: true });
+  const ProjectData: Project[] | any[]= data;
 
-  const [project, setProject] = useState(
+  const [project, setProject] = useState<Project | undefined>(
     ProjectData.find((project) => project.id == projectId)
       ? ProjectData.find((project) => project.id == projectId)
       : {
@@ -25,7 +39,8 @@ const ProjectPage = () => {
           location: "",
           year: "",
           paragraphs: [],
-          images: [],
+        images: [],
+          videos: []
         }
   );
   useEffect(() => {
@@ -105,7 +120,7 @@ const ProjectPage = () => {
         animate={{ opacity: 1, transition: { delay: 1.2 } }}
         className="max-w-[1440px] mx-auto lg:px-[20px] mt-[80px] lg:mt-[100px]"
       >
-        <ImageCarousel images={project!.images} />
+        <ImageCarousel images={project!.images!} videos={project?.videos}/>
       </motion.div>
       <motion.div
         animate={
@@ -122,7 +137,7 @@ const ProjectPage = () => {
             Project Summary
           </h1>
           <div className=" mx-auto md:mx-0 md:text-[20px] flex flex-col items-center lg:items-start gap-[10px] mt-[20px]">
-            {project?.paragraphs.map((paragraph, index) => (
+            {project?.paragraphs!.map((paragraph, index) => (
               <p className="max-w-[550px] " key={index}>
                 {paragraph}
               </p>
@@ -179,13 +194,13 @@ const ProjectPage = () => {
         <div className="no-scrollbar min-w-full overflow-x-scroll overflow-y-visible py-[20px] md:py-[60px] flex gap-x-[38px] max-w-[1440px] mx-auto px-[20px] lg:px-[calc(((100vw-1440px)/2)+20px)]">
           {ProjectData.filter(
             (currentProject) =>
-              currentProject.buildingType == project?.buildingType
+              currentProject.buildingType == project?.buildingType && currentProject !== project
           ).map((project) => (
             <div className="min-w-[300px] md:min-w-[480px]">
               <Project
                 height={window.innerWidth > 768 ? 360 : 200}
                 projectName={project.projectName}
-                image={project.images[0]}
+                image={project.images? project.images[0] : project.videos[0].thumbnail}
                 link={`/our-work/${project.id}`}
               />
             </div>
