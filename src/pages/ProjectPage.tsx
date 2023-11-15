@@ -212,7 +212,7 @@ const ProjectPage = () => {
           Want To Build Something Amazing?
         </p>
         <div className="flex justify-center mt-[40px] lg:mt-[63px] mb-[90px] lg:mb-[120px] w-full">
-          <button className="text-[19px] md:text-[22px] lg:text-[26px] font-bold bg-black text-white w-[250px] md:w-[300px] lg:w-[362px] h-[60px] md:h-[80px] lg:h-[89px] rounded-[10px]">
+          <button onClick={() => navigate("/contact-us")} className="text-[19px] md:text-[22px] lg:text-[26px] font-bold bg-black text-white w-[250px] md:w-[300px] lg:w-[362px] h-[60px] md:h-[80px] lg:h-[89px] rounded-[10px]">
             CONTACT US
           </button>
         </div>
