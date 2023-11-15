@@ -65,10 +65,10 @@ const HomePage = () => {
           {homeProjects.map((project, index) => {
             return (
               <HomeProject
-                link={project.link}
-                text={project.title}
-                image={project.image}
-                type={project.type}
+                link={project.link as string}
+                text={project.title as string}
+                image={project.image as string}
+                type={project.type as string}
                 showing={currentProject == index}
               />
             );

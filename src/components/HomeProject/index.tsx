@@ -53,7 +53,7 @@ const HomeProject: React.FC<HomeProjectProps> = ({
           className="cursor-pointer text-[32px] md:text-[40px] lg:text-[60px] font-bold max-w-[625px] text-white leading-[32px] md:leading-[40px] lg:leading-[60px]"
         >
           <div className="flex flex-wrap gap-x-[18px]">
-            {text.split(" ").map((word, index) => {
+            {text?.split(" ").map((word, index) => {
               return (
                 <div key={index} className="overflow-hidden flex">
                   {word.split("").map((letter: string, index: number) => {

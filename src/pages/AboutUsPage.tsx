@@ -1,10 +1,12 @@
 import PersonCard from "../components/PersonCard";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AboutUsPage = () => {
   const largeImageRef = useRef(null);
   const largeImageInView = useInView(largeImageRef, { once: true });
+  const navigate = useNavigate()
   const aboutUsParagraphs = [
     "At Maestrokes, we believe in achieving perfection through unwavering dedication, maximum effort, and an unwavering attention to detail. From the initial concept to the final touches, we meticulously craft every project, pushing boundaries to create architectural masterpieces that inspire and transform spaces. ",
     "With a relentless pursuit of excellence, we ensure that every design element is meticulously curated, every line purposeful, and every detail meticulously executed. Trust us to turn your vision into a flawlessly realized reality, where innovation meets precision, and every project becomes a testament to our unwavering commitment to perfection.",
@@ -214,27 +216,27 @@ const AboutUsPage = () => {
           name="Akinjobi Samuel"
           role="Professional Architect"
         />
-        <PersonCard
+        {/* <PersonCard
           image="/AboutUsPage/TeamMembers/ifedolapo.png"
           name="Ifedolapo Adesope"
           role="Architectural Designer"
-        />
+        /> */}
         <PersonCard
           image="/AboutUsPage/TeamMembers/bolaji.png"
           name="Bolaji Aderemi-Lateefe"
           role="Project Manager & Product Designer"
         />
-        <PersonCard
+        {/* <PersonCard
           image="/AboutUsPage/TeamMembers/damilola.png"
           name="Damilola Dowole"
           role="Architectural Designer & Project Designer"
-        />
+        /> */}
       </section>
       <section className="mt-[80px] md:mt-[125px] flex flex-col items-center mb-[80px] md:mb-[130px] px-[20px]">
         <p className="text-[28px] md:text-[36px] lg:text-[48px] font-bold text-center">
           Interested In Working With Us?
         </p>
-        <button className="w-[230px] md:w-[440px] h-[60px] md:h-[110px] bg-black rounded-[5px] md:rounded-[10px] text-white text-[20px] md:text-[32px] font-bold mt-[30px]">
+        <button onClick={() => navigate("/contact-us")} className="w-[230px] md:w-[440px] h-[60px] md:h-[110px] bg-black rounded-[5px] md:rounded-[10px] text-white text-[20px] md:text-[32px] font-bold mt-[30px]">
           CONTACT US
         </button>
       </section>
