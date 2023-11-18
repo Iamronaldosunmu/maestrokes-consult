@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "framer-motion": "^10.11.5",
